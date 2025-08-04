@@ -2,7 +2,7 @@
 IMAGE_NAME = "test-app"
 CONTAINER_NAME = "test-app-container"
 docker build -t $IMAGE_NAME
-docker run --rn $CONTAINER_NAME
+docker run --rn --name $CONTAINER_NAME
 NUM1=5
 NUM2=6
 RESULT = ((NUM1 + NUM2))
