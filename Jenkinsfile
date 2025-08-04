@@ -12,7 +12,7 @@ pipeline {
 
         stage('Docker Build') {
             steps {
-                sh 'docker build -t $IMAGE_NAME'
+                sh 'docker build -t $IMAGE_NAME .'
             }
         }
 
@@ -31,7 +31,7 @@ pipeline {
         stage ('Deploy to minikube'){
             steps {
                 sh 'kubectl apply -f Deployment.yaml'
-                   'kubectl apply -f Service.yaml'
+                   'kubectl apply -f service.yaml'
         }
     }
 }
