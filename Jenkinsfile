@@ -6,7 +6,7 @@ pipeline {
     stages {
         stage('Git clone') {
             steps {
-                sh 'https://github.com/SatGitZ/Pythonapp.git'
+                git 'https://github.com/SatGitZ/Pythonapp.git'
             }
         }
 
@@ -25,7 +25,7 @@ pipeline {
         stage('load to minikube') {
             steps {
                 sh ' eval $ (minikube docker-env)'
-                   'docker build -t $IMAGE_NAME'
+                   'docker build -t $IMAGE_NAME .' 
             }
         }
         stage ('Deploy to minikube'){
