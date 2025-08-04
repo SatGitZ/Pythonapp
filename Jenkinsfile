@@ -24,8 +24,10 @@ pipeline {
 
         stage('load to minikube') {
             steps {
-                sh ' eval $ (minikube docker-env)'
-                   'docker build -t $IMAGE_NAME .' 
+                sh ''' 
+                ' eval $(minikube docker-env)'
+                   'docker build -t $IMAGE_NAME .'
+                   ''' 
             }
         }
         stage ('Deploy to minikube'){
