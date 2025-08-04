@@ -33,7 +33,7 @@ pipeline {
         stage ('Deploy to minikube'){
             steps {
                 sh 'kubectl apply -f Deployment.yaml'
-                   'kubectl apply -f service.yaml'
+                 sh  'kubectl apply -f service.yaml'
         }
     }
 }
