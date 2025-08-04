@@ -12,7 +12,7 @@ pipeline {
 
         stage('Docker Build') {
             steps {
-                sh 'docker build -t $IMAGE_NAME .'
+                sh 'sudo docker build -t $IMAGE_NAME .'
             }
         }
 
